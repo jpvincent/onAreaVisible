@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>The necessary impressive demo</title>
+		<style>
+			#taking-space {
+				height: 3000px;
+				background: #1e5799; /* Old browsers */
+
+				background: linear-gradient(to bottom,  #1e5799 0%,#ACCCE5 100%); /* W3C */
+
+			}
+			#container {
+
+			}
+		</style>
+	
+		<script src="http://code.jquery.com/jquery-1.7.2.min.js"></script>
+		<script src="http://underscorejs.org/underscore-min.js"></script>
+		<script src="./onareavisible.js"></script>
+
+	</head>
+	<body>
+		<div id="taking-space">Scroll down ↓</div>
+		<div id="container">Should not see me</div>
+		<script>
+			window.onAreaVisible(
+				$('#container'), // that DOM element will be enhanced only when visible
+				function() {
+					// scope is window
+					// no arguments given
+
+					// here goes your init method
+					$('#container').html('enhanced DOM element')
+				},
+				100 // run the method 100 pixel before seeing the element
+			);
+		</script>
+	</body>
+
+</html>
